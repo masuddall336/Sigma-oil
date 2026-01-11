@@ -1,0 +1,66 @@
+#social_icons svg:hover {
+    background-color: #fff;
+    padding: 8%;
+    border-radius: 2px;
+    color: black;
+}
+
+#main_nav a {
+    transition: all 0.4s ease-in-out;
+}
+
+#main_nav a:hover {
+    background-color: #FFFFFF;
+    color: #FF6319;
+}
+
+#automotive:hover .automotive_sub {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.top_arrow {
+    opacity: 0;
+    visibility: visible;
+    transform: translateX(0px);
+    transition: transform 0.35s ease;
+}
+
+#automotive:hover .top_arrow {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-60px);
+}
+
+/* Automotive Sub menu */
+.automotive_sub {
+    top: 100%;
+    left: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        visibility 0.35s;
+}
+
+.automotive_sub li {
+    padding: 8px 3px;
+}
+
+.automotive_sub:first-child {
+    border-top: 1px solid #FF6319;
+}
+
+.automotive_sub li:hover {
+    background-color: #FFFFFF;
+    color: #303393;
+}
+
+.top_arrow svg {
+    /* color: #FF6319; */
+}
