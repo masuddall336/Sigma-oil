@@ -126,24 +126,22 @@
 
 
 /* Responsive nav */
-#Responsive_icon svg{
-    font-size:3rem;
-    display: none;
-}
+
 #call{
     display: none;
+}
+#Responsive_icon svg{
+    color: red;
 }
 
 /* responsive menu */
 @media only screen and (max-width: 1000px) {
 #main_nav{
-    visibility: hidden;
-}
-#Responsive_icon svg{
-    display: block;
+    display: none;
 }
 #company_logo{
     justify-self: center;
+    
 }
 #call{
     display: flex;

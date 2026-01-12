@@ -22,8 +22,8 @@ const Navbar = () => {
                 <div id="Responsive_icon " className="">
                     <IoReorderThreeOutline />
                 </div>
-                <NavLink className="company_logo w-[5%] mx-auto">
-                    <img id="company_logo" width='%' height='35%' src={icon} alt="" />
+                <NavLink className="company_logo w-20 ">
+                    <img id="company_logo"src={icon} alt="" />
                 </NavLink>
                 <nav className=" pr-2">
                     <ul id="main_nav" className="flex justify-end  text-sm">
@@ -113,7 +113,7 @@ const Navbar = () => {
                     </ul>
                 </nav>
 
-                <div className="flex  items-center justify-end gap-3 w-[10%] border-l-1 pl-2 mr-3 border-dotted">
+                <div className="flex  items-center justify-end gap-3  border-l-1 pl-2 mr-3 border-dotted">
                     <div className=" bg-[#FF6319] p-2 rounded">
                         <IoCallSharp />
                     </div>
