@@ -4,29 +4,25 @@ import { FaYoutube } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { TiArrowSortedUp } from "react-icons/ti";
 import { IoReorderThreeOutline } from "react-icons/io5";
-
-
 import './navbar.css'
-
-
-
 import icon from '../../public/icons/sigma-oil-logo.png'
 import { NavLink } from "react-router";
-
-
-
+import ResponsiveNav from "./responsiveNav";
 const Navbar = () => {
     return (
         <>
             <div className="flex items-center justify-between  px-5 bg-[#002776] py-2">
-                <div id="Responsive_icon " className="">
-                    <IoReorderThreeOutline />
+                <div id="Responsive_icon" className="relative z-10">
+                    <IoReorderThreeOutline id="threeLine" />
                 </div>
-                <NavLink className="company_logo w-20 ">
-                    <img id="company_logo"src={icon} alt="" />
+                <div id="responsiveNav" className="absolute top-0 left-0 h-full">
+                    <ResponsiveNav></ResponsiveNav>
+                </div>
+                <NavLink className="company_logo w-20 j ">
+                    <img id="company_logo" src={icon} alt="" />
                 </NavLink>
-                <nav className=" pr-2">
-                    <ul id="main_nav" className="flex justify-end  text-sm">
+                <nav className=" pr-2 lg:flex-1">
+                    <ul id="main_nav" className="flex text-sm justify-end">
                         <NavLink className="flex items-center" >
                             <li id="automotive" className="relative py-[29%] px-1 flex">Automotive
 
