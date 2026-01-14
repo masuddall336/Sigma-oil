@@ -4,20 +4,170 @@ import { FaYoutube } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { TiArrowSortedUp } from "react-icons/ti";
 import { IoReorderThreeOutline } from "react-icons/io5";
+import { FaPlus } from "react-icons/fa";
+import { TiMinus } from "react-icons/ti";
+import { ImCross } from "react-icons/im";
 import './navbar.css'
 import icon from '../../public/icons/sigma-oil-logo.png'
 import { NavLink } from "react-router";
-import ResponsiveNav from "./responsiveNav";
+import { useState } from "react";
 const Navbar = () => {
+    let [value, setValue] = useState("");
+    console.log(value);
+
+    const handle_sub_menu = (menuName) => {
+        // setValue(prev => !prev);
+        setValue(prev => (prev === menuName ? "" : menuName));
+
+
+    }
+
     return (
         <>
             <div className="flex items-center justify-between  px-5 bg-[#002776] py-2">
-                <div id="Responsive_icon" className="relative z-10">
+                <div id="Responsive_icon" className="relative">
                     <IoReorderThreeOutline id="threeLine" />
                 </div>
-                <div id="responsiveNav" className="absolute top-0 left-0 h-full">
-                    <ResponsiveNav></ResponsiveNav>
+                {/* Responsive Nav */}
+                <div id="responsive_nav" className="absolute top-0 left-0 bg-[#032E5B] h-[100vh] w-[45%] overflow-scroll z-10 ">
+                    <div id="cross_icon" className="absolute right-3 top-2">
+                        <ImCross id="cross_icon" />
+                    </div>
+                    <div id="responsive_icon" className="w-[40%] mx-auto pt-[5%]">
+                        <img src={icon} alt="Compnay logo" />
+                    </div>
+                    <div className="border-b-1 border-[#4c5f8c] pt-7 w-[95%] mx-auto"></div>
+                    <ul className="responsive_ul">
+                        <li className="h-10"></li>
+                        <li className="flex justify-between items-center relative">Automotive
+                            <div onClick={() => handle_sub_menu('Automotive')} >
+                                {
+                                    value === "Automotive" ? <TiMinus /> : <FaPlus />
+                                }
+                            </div>
+                            {
+                                value === "Automotive" ? <ul id="" className="absolute inline-block left-0 top-[100%] z-10 bg-[#0A1D31] w-[100%]">
+                                    <div id="top_arrow" className="absolute bottom-[98%]">
+                                        <TiArrowSortedUp />
+                                    </div>
+                                    <li className="relative">Motorcycle</li>
+                                    <li>Three Wheeler</li>
+                                    <li>Passenger Car</li>
+                                    <li>Light Duty</li>
+                                    <li className="relative">Heavy Duty</li>
+                                </ul> : ""
+                            }
+                        </li>
+                        <li className={`flex justify-between items-center   ${value === "Automotive " ? 'top-10 absolute' : 'relative'}`}>Industrial
+                            <div onClick={() => handle_sub_menu('Industrial')} >
+                                {
+                                    value === "Industrial" ? <TiMinus id="" className="" /> : <FaPlus id="" />
+                                }
+                            </div>
+                            {
+                                value === "Industrial" ? <ul id="" className="absolute inline-block left-0 top-[100%] z-10 bg-[#0A1D31] w-[100%]">
+                                    <div id="top_arrow" className="absolute bottom-[93%]">
+                                        <TiArrowSortedUp />
+                                    </div>
+                                    <li>Soil</li>
+                                    <li>Sigma</li>
+                                </ul> : ""
+                            }
+                        </li>
+                        <li className={`flex justify-between items-center relative ${value === "Industrial" ? 'mt-[39%]' : ''}`}>Marine
+                            <div onClick={() => handle_sub_menu('Marine')} >
+                                {
+                                    value === "Marine" ? <TiMinus id="" className="" /> : <FaPlus id="" />
+                                }
+                            </div>
+                            {
+                                value === "Marine" ? <ul id="" className="absolute inline-block left-0 top-[100%] z-10 bg-[#0A1D31] w-[100%]">
+                                    <div id="top_arrow" className="absolute bottom-[95%]">
+                                        <TiArrowSortedUp />
+                                    </div>
+                                    <li>Merin Engin Oil</li>
+                                    <li>Cylinder Oil</li>
+                                    <li>Sigma</li>
+                                </ul> : ""
+                            }
+                        </li>
+                        <li className={`flex justify-between items-center relative ${value === "Marine" ? 'mt-[60%]' : ''}`}>Agriculture
+                            <div onClick={() => handle_sub_menu('Agriculture')} >
+                                {
+                                    value === "Agriculture" ? <TiMinus id="" className="" /> : <FaPlus id="" />
+                                }
+                            </div>
+                            {
+                                value === "Agriculture" ? <ul id="" className="absolute inline-block left-0 top-[100%] z-10 bg-[#0A1D31] w-[100%]">
+                                    <div id="top_arrow" className="absolute bottom-[95%]">
+                                        <TiArrowSortedUp />
+                                    </div>
+                                    <li>Sigma</li>
+                                    <li>Naf Arab</li>
+                                    <li>Soil</li>
+                                </ul> : ""
+                            }
+                        </li>
+                        <li className={`flex justify-between items-center relative ${value === "Agriculture" ? 'mt-[59%]' : ''}`}>Gear & Transmission
+                            <div onClick={() => handle_sub_menu('Gear')} >
+                                {
+                                    value === "Gear" ? <TiMinus id="" className="" /> : <FaPlus id="" />
+                                }
+                            </div>
+                            {
+                                value === "Gear" ? <ul id="" className="absolute inline-block left-0 top-[100%] z-10 bg-[#0A1D31] w-[100%]">
+                                    <div id="top_arrow" className="absolute bottom-[95%]">
+                                        <TiArrowSortedUp />
+                                    </div>
+                                    <li>Soil</li>
+                                    <li>Sigma</li>
+                                    <li>Naf Arab</li>
+                                </ul> : ""
+                            }
+                        </li>
+                        <li className={`flex justify-between items-center relative ${value === "Gear" ? 'mt-[59%]' : ''}`}>Specialized
+                            <div onClick={() => handle_sub_menu('Specialized')} >
+                                {
+                                    value === "Specialized" ? <TiMinus id="" className="" /> : <FaPlus id="" />
+                                }
+                            </div>
+                            {
+                                value === "Specialized" ? <ul id="" className="absolute inline-block left-0 top-[100%] z-10 bg-[#0A1D31] w-[100%]">
+                                    <div id="top_arrow" className="absolute bottom-[92%]">
+                                        <TiArrowSortedUp />
+                                    </div>
+                                    <li>Naf Arab</li>
+                                    <li>Sigma</li>
+                                </ul> : ""
+                            }
+                        </li>
+                        <li className={`flex justify-between items-center relative ${value === "Specialized" ? 'mt-[39%]' : ''}`}>Corporate
+                            <div onClick={() => handle_sub_menu('Corporate')} >
+                                {
+                                    value === "Corporate" ? <TiMinus id="" className="" /> : <FaPlus id="" />
+                                }
+                            </div>
+                            {
+                                value === "Corporate" ? <ul id="" className="absolute inline-block left-0 top-[100%] z-[100%] bg-[#0A1D31] w-[100%]">
+                                    <div id="top_arrow" className="absolute bottom-[98%]">
+                                        <TiArrowSortedUp />
+                                    </div>
+                                    <li>Corporate Profile</li>
+                                    <li>Management Team</li>
+                                    <li>Awards & Affiliation</li>
+                                    <li>Career Opportunity</li>
+                                    <li>Hours & Location</li>
+                                    <li>Mission</li>
+                                    <li>Blog</li>
+                                    <li>Contact Us</li>
+                                </ul> : ""
+                            }
+                        </li>
+                    </ul>
                 </div>
+
+
+                {/* main nav */}
                 <NavLink className="company_logo w-20 j ">
                     <img id="company_logo" src={icon} alt="" />
                 </NavLink>
@@ -123,7 +273,7 @@ const Navbar = () => {
 
                     </div>
                 </div>
-            </div>
+            </div >
         </>
 
     )

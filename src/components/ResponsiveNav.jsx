@@ -1,8 +1,7 @@
 import { TiArrowSortedUp } from "react-icons/ti";
-import { FaPlus } from "react-icons/fa";
-import { TiMinus } from "react-icons/ti";
+
 import { NavLink } from 'react-router'
-import { ImCross } from "react-icons/im";
+
 import icon from '../../public/icons/sigma-oil-logo.png'
 
 const ResponsiveNav = () => {
@@ -21,13 +20,13 @@ const ResponsiveNav = () => {
         sub.classList.toggle('automotive_sub');
     }
 
-    let showResponsiveNav = () => {
+    let hideResponsiveNav = () => {
         document.getElementById('responsive_navbar').classList.add('responsive_Nav');
-    }   
+    }
 
     return (
         <div id="responsive_navbar" className="bg-[#032E5B] p-3 h-full">
-            <div onClick={showResponsiveNav} id="cross_icon" className="absolute top-2 right-2 cursor-pointer">
+            <div onClick={hideResponsiveNav} id="cross_icon" className="absolute top-2 right-2 cursor-pointer">
                 <ImCross id="cross_icon" />
             </div>
             <div id="icon" className="">
@@ -35,7 +34,7 @@ const ResponsiveNav = () => {
             </div>
             <span id="border" className="border-b-1 py-2 border-[#4c5f8c] block"></span>
             <nav className="">
-                <ul id="main_nav" className="text-sm justify-end">
+                <ul id="main_nav_reszponsvie" className="text-sm justify-end">
                     <NavLink lassName="flex items-center">
                         <li className="relative py-[5%] px-1 flex gap-20 items-center justify-between">Home</li>
                     </NavLink>
