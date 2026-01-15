@@ -13,13 +13,9 @@ import { NavLink } from "react-router";
 import { useState } from "react";
 const Navbar = () => {
     let [value, setValue] = useState("");
-    console.log(value);
-
     const handle_sub_menu = (menuName) => {
         // setValue(prev => !prev);
         setValue(prev => (prev === menuName ? "" : menuName));
-
-
     }
 
     return (
